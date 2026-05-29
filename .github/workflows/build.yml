@@ -27,7 +27,10 @@ jobs:
           echo "/opt/gradle-8.6/bin" >> $GITHUB_PATH
 
       - name: Build debug APK
-        run: gradle assembleDebug --info 2>&1 | tail -100
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
+          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+        run: gradle assembleDebug --stacktrace
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
