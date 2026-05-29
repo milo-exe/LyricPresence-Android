@@ -1,5 +1,6 @@
 package com.lyricpresence.ui
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -19,6 +20,7 @@ import com.lyricpresence.SpotifyManager
 import com.lyricpresence.LyricRepository
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnboardingScreen(onDone: () -> Unit) {
     val context = LocalContext.current

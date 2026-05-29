@@ -1,5 +1,6 @@
 package com.lyricpresence.ui
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -15,6 +16,7 @@ import com.lyricpresence.LyricRepository
 import com.lyricpresence.Prefs
 import com.lyricpresence.SpotifyManager
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen() {
     val context = LocalContext.current
