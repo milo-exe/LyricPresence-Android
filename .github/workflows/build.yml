@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -25,7 +27,7 @@ jobs:
           echo "/opt/gradle-8.6/bin" >> $GITHUB_PATH
 
       - name: Build debug APK
-        run: gradle assembleDebug --stacktrace 2>&1 | tee build.log || (grep -E "^> |error:" build.log | head -40 && exit 1)
+        run: gradle assembleDebug --info 2>&1 | tail -100
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
