@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LyricPresence</string>
+    <string name="notification_channel_name">LyricPresence</string>
+    <string name="notification_title">LyricPresence is running</string>
+</resources>
